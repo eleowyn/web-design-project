@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>UNKLAB Lost & Found</h1>
+            <div class="user-menu">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <div class="tab active">
+            Browse
+            <span class="notification">5</span>
+        </div>
+        <div class="tab" onclick="window.location.href='reportitem.html'">Report Lost</div>
+        <div class="tab" onclick="window.location.href='reportitem.html'" >Report Found</div>
+        <div class="tab">My Items</div>
+        <div class="tab" onclick="window.location.href='forum.html'">Forum</div>
+        </nav>
+    </nav>
+
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search items...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i>
+                    Category
+                </button>
+                <button class="filter-btn">
+                    <i class="fas fa-calendar"></i>
+                    Date Range
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="status-toggle">
+        <div class="toggle-container">
+            <button class="toggle-btn active">Lost</button>
+            <button class="toggle-btn">Found</button>
+        </div>
+    </section>
+
+    <main class="items-grid">
+        <div class="item-card">
+            <div class="item-image">
+                <img onclick="gotoDetails()" src="/api/placeholder/400/300" alt="MacBook Pro">
+                <button class="bookmark-btn">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+            </div>
+            <div class="item-content">
+                <h3>MacBook Pro</h3>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lost at Engineering Building
+                </p>
+                <p class="time">
+                    <i class="fas fa-clock"></i>
+                    2 hours ago
+                </p>
+                <button class="contact-btn" onclick="gotoDetails()">Details</button type="submit">
+            </div>
+        </div>
+        <script>
+            function gotoContact() {
+                window.location.href = 'chat.html';
+            }
+        </script>
+
+        <div class="item-card">
+            <div class="item-image">
+                <img onclick="gotoDetails()" src="/api/placeholder/400/300" alt="Student ID Card">
+                <button class="bookmark-btn">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+            </div>
+            <div class="item-content">
+                <h3>Student ID Card</h3>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lost at Library
+                </p>
+                <p class="time">
+                    <i class="fas fa-clock"></i>
+                    5 hours ago
+                </p>
+                <button class="contact-btn" onclick="gotoDetails()">Details</button>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-image">
+                <img onclick="gotoDetails()" src="/api/placeholder/400/300" alt="Calculator">
+                <button class="bookmark-btn">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+            </div>
+            <div class="item-content">
+                <h3>Calculator</h3>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lost at Room 204
+                </p>
+                <p class="time">
+                    <i class="fas fa-clock"></i>
+                    1 day ago
+                </p>
+                <button class="contact-btn" onclick="gotoDetails()">Details</button>
+            </div>
+        </div>
+
+        <script>
+            function gotoDetails() {
+                window.location.href = 'itemdetails.html';
+            }
+        </script>
+    </main>
+</body>
+</html>

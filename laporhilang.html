@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Lapor Barang Hilang/Temuan</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f4f4f4;  
+            margin: 0;  
+            padding: 20px;  
+        }  
+
+        .container {  
+            max-width: 600px;  
+            margin: auto;  
+            background: white;  
+            padding: 20px;  
+            border-radius: 5px;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        }  
+
+        h1 {  
+            text-align: center;  
+        }  
+
+        label {  
+            display: block;  
+            margin: 10px 0 5px;  
+        }  
+
+        input, select, textarea {  
+            width: 100%;  
+            padding: 10px;  
+            margin-bottom: 15px;  
+            border: 1px solid #ccc;  
+            border-radius: 4px;  
+        }  
+
+        button {  
+            width: 100%;  
+            padding: 10px;  
+            background-color: #28a745;  
+            color: white;  
+            border: none;  
+            border-radius: 4px;  
+            cursor: pointer;  
+        }  
+
+        button:hover {  
+            background-color: #218838;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Lapor Barang Hilang/Temuan</h1>  
+        <form id="reportForm" enctype="multipart/form-data">  
+            <label for="itemType">Jenis Laporan:</label>  
+            <select id="itemType" name="itemType" required>  
+                <option value="hilang">Barang Hilang</option>  
+                <option value="temuan">Barang Temuan</option>  
+            </select>  
+
+            <label for="itemPhoto">Upload Foto Barang:</label>  
+            <input type="file" id="itemPhoto" name="itemPhoto" accept="image/*" required>  
+
+            <label for="itemDescription">Deskripsi Detail Barang:</label>  
+            <textarea id="itemDescription" name="itemDescription" rows="4" required></textarea>  
+
+            <label for="location">Lokasi Kehilangan/Penemuan:</label>  
+            <input type="text" id="location" name="location" required>  
+
+            <label for="dateTime">Waktu Kehilangan/Penemuan:</label>  
+            <input type="datetime-local" id="dateTime" name="dateTime" required>  
+
+            <button type="submit">Kirim Laporan</button>  
+        </form>  
+    </div>  
+    <script src="script.js"></script>  
+</body>  
+</html>

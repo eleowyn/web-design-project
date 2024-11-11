@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNKLAB Lost & Found - Chat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-sidebar">
+            <div class="sidebar-header">
+                <button class="back-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Messages</h2>
+            </div>
+            <div class="chat-list">
+                <div class="chat-item active">
+                    <div class="chat-avatar">JD</div>
+                    <div class="chat-info">
+                        <div class="chat-name">John Doe</div>
+                        <div class="chat-preview">About: MacBook Pro</div>
+                    </div>
+                </div>
+                <!-- Add more chat items as needed -->
+            </div>
+        </div>
+        
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-avatar">JD</div>
+                <div class="chat-info">
+                    <div class="chat-name">John Doe</div>
+                    <div class="chat-preview">Online</div>
+                </div>
+            </div>
+            
+            <div class="chat-messages">
+                <div class="message received">
+                    <div class="message-content">Hi, I found your MacBook Pro at the GK2-108.</div>
+                    <div class="message-time">10:30 AM</div>
+                </div>
+                
+                <div class="message sent">
+                    <div class="message-content">Oh thank you so much! Can we meet to get it back?</div>
+                    <div class="message-time">10:31 AM</div>
+                </div>
+                
+                <div class="message received">
+                    <div class="message-content">Sure! I'm available today until 4 PM. Where would you like to meet?</div>
+                    <div class="message-time">10:32 AM</div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button>
+                    <i class="fas fa-paper-plane"></i>
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add message sending functionality
+        const input = document.querySelector('.chat-input input');
+        const sendBtn = document.querySelector('.chat-input button');
+        const messagesContainer = document.querySelector('.chat-messages');
+
+        function sendMessage() {
+            const message = input.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message sent';
+                messageElement.innerHTML = `
+                    <div class="message-content">${message}</div>
+                    <div class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                `;
+                messagesContainer.appendChild(messageElement);
+                input.value = '';
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
